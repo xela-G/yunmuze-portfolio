@@ -1,5 +1,5 @@
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import React, { useRef, useState } from 'react';
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
 
 import { Navigation } from './components/Navigation';
@@ -10,6 +10,7 @@ import { PROJECTS, EXPERIENCE } from './constants';
 
 const App: React.FC = () => {
   const containerRef = useRef(null);
+  const [showWechatQR, setShowWechatQR] = useState(false);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"]
@@ -129,28 +130,61 @@ const App: React.FC = () => {
           <div>
             <h4 className="font-display font-bold uppercase mb-4 text-xl">Socials</h4>
             <ul className="space-y-2 font-sans text-neutral-400">
-              <li><a href="#" className="hover:text-acid-lime transition-colors">Twitter / X</a></li>
-              <li><a href="#" className="hover:text-acid-lime transition-colors">Instagram</a></li>
-              <li><a href="#" className="hover:text-acid-lime transition-colors">LinkedIn</a></li>
-              <li><a href="#" className="hover:text-acid-lime transition-colors">Dribbble</a></li>
+              <li><button onClick={() => setShowWechatQR(true)} className="hover:text-acid-lime transition-colors">WeChat</button></li>
+              <li><a href="https://xhslink.com/m/9DJd9K8fvC4" target="_blank" rel="noopener noreferrer" className="hover:text-acid-lime transition-colors">RedNote</a></li>
             </ul>
           </div>
           <div>
             <h4 className="font-display font-bold uppercase mb-4 text-xl">Contact</h4>
-            <a href="mailto:hello@yunmuze.design" className="font-sans text-xl md:text-3xl hover:text-acid-lime transition-colors underline decoration-acid-lime decoration-2 underline-offset-4 break-all">
-              hello@yunmuze.design
+            <a href="mailto:yunmuze688@gmail.com" className="font-sans text-xl md:text-3xl hover:text-acid-lime transition-colors underline decoration-acid-lime decoration-2 underline-offset-4 break-all block">
+              yunmuze688@gmail.com
+            </a>
+            <a href="tel:18384286340" className="font-sans text-xl md:text-3xl hover:text-acid-lime transition-colors underline decoration-acid-lime decoration-2 underline-offset-4 block mt-4">
+              18384286340
             </a>
           </div>
           <div className="md:text-right">
             <p className="font-sans text-neutral-500 text-sm">
-              © 2026 YUNMUZE Design.<br />
-              Made with React & Gemini.
+              © 2026 YUNMUZE DESIGN.
             </p>
           </div>
         </div>
       </section>
 
       <ChatWidget />
+
+      {/* WeChat QR Code Modal */}
+      <AnimatePresence>
+        {showWechatQR && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center"
+            onClick={() => setShowWechatQR(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className="bg-neutral-900 border border-white/20 rounded-2xl p-8 flex flex-col items-center gap-4"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <h3 className="font-display font-bold text-xl uppercase">Scan to Add WeChat</h3>
+              <div className="w-[200px] h-[200px] bg-white rounded-lg flex items-center justify-center">
+                {/* Replace with your WeChat QR code image */}
+                <span className="text-neutral-400 text-sm text-center px-4">QR Code Placeholder</span>
+              </div>
+              <button
+                onClick={() => setShowWechatQR(false)}
+                className="font-sans text-sm text-neutral-400 hover:text-acid-lime transition-colors mt-2"
+              >
+                Close
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
