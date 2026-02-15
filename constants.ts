@@ -35,17 +35,17 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 5,
-    title: "Echo",
-    category: "Mining · App",
-    year: "2024",
+    title: "Mining",
+    category: "App",
+    year: "2021 – 2023",
     image: "https://picsum.photos/800/600?random=1",
     description: "A futuristic trading platform interface."
   },
   {
     id: 6,
     title: "Wallet",
-    category: "Crypto · Web3",
-    year: "2022 – 2024",
+    category: "Crypto",
+    year: "2021 – 2023",
     image: "https://picsum.photos/800/600?random=2",
     description: "A series of cryptocurrency wallet interfaces covering asset management, trading, and DeFi interactions."
   }
