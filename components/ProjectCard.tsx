@@ -43,7 +43,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
 
       {/* Hover Image Reveal */}
       <motion.div
-        className="absolute inset-0 flex items-center justify-end pr-24 z-20 pointer-events-none"
+        className="absolute inset-0 flex items-center justify-end pr-48 z-20 pointer-events-none"
       >
         <motion.div
           className="w-[300px] h-[200px] md:w-[500px] md:h-[350px] overflow-hidden rounded-lg opacity-0"

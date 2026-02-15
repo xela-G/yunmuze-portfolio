@@ -35,35 +35,19 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 5,
-    title: "Neon Nexus",
-    category: "Fintech App",
+    title: "Echo",
+    category: "Mining · App",
     year: "2024",
     image: "https://picsum.photos/800/600?random=1",
     description: "A futuristic trading platform interface."
   },
   {
     id: 6,
-    title: "Void",
-    category: "Fashion E-comm",
-    year: "2023",
+    title: "Wallet",
+    category: "Crypto · Web3",
+    year: "2022 – 2024",
     image: "https://picsum.photos/800/600?random=2",
-    description: "Minimalist streetwear shopping experience."
-  },
-  {
-    id: 7,
-    title: "Cyber A.I.",
-    category: "Landing Page",
-    year: "2023",
-    image: "https://picsum.photos/800/600?random=3",
-    description: "Marketing site for an LLM startup."
-  },
-  {
-    id: 8,
-    title: "Archive 09",
-    category: "Portfolio",
-    year: "2022",
-    image: "https://picsum.photos/800/600?random=4",
-    description: "Personal branding for photographer."
+    description: "A series of cryptocurrency wallet interfaces covering asset management, trading, and DeFi interactions."
   }
 ];
 

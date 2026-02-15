@@ -5,7 +5,6 @@ import { ArrowDown } from 'lucide-react';
 import { Navigation } from './components/Navigation';
 import { Marquee } from './components/Marquee';
 import { ProjectCard } from './components/ProjectCard';
-import { Button } from './components/Button';
 import { ChatWidget } from './components/ChatWidget';
 import { PROJECTS, EXPERIENCE } from './constants';
 
@@ -77,7 +76,7 @@ const App: React.FC = () => {
 
           <div className="flex flex-col gap-12 pt-0 md:pt-24">
             <p className="font-sans text-xl md:text-3xl leading-snug">
-              I'm YUNMUZE, a multidisciplinary designer focusing on <span className="text-acid-lime">interactive UI</span> and <span className="text-acid-lime">design systems</span>. I believe the web should be fun, weird, and memorable.
+              I'm YUNMUZE, a multidisciplinary designer focusing on <span className="text-acid-lime">interactive UI</span> and <span className="text-acid-lime">design systems</span>. I believe every digital experience should be fun, intuitive, and memorable.
             </p>
 
             <div className="flex flex-col gap-8 mt-8">
@@ -111,10 +110,6 @@ const App: React.FC = () => {
           {PROJECTS.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}
-        </div>
-
-        <div className="flex justify-center mt-16 md:mt-24">
-          <Button variant="outline">View All Archives</Button>
         </div>
       </section>
 
